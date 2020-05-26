@@ -3,7 +3,17 @@ import {
   BrowserRouter as Link,
 } from "react-router-dom";
 
-const BrandComponent = ({ setBrandsList }) => {
+import { braNameApi } from "./api";
+
+const BrandComponent = () => {
+  const [brandName, setBrandName] = React.useState([]);
+
+  React.useEffect(() => {
+    braNameApi().then((data) => {
+      setBrandName(data);
+    });
+  }, []);
+
   return(
     <div>
       <p>no</p>
