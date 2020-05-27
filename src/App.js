@@ -24,7 +24,7 @@ function App() {
             </div>
           ))}
         </Route>
-        <Route path="/brands/">
+        <Route path="/brands/:href">
           <BrandComponent
           />
         </Route>
