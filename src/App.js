@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Switch, Route, Link } from "react-router-dom";
 import { braApi } from "./api";
 import BrandComponent from "./BrandComponent";
+import ModelComponent from "./ModelComponent";
 import "./App.css";
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
         <Route path="/brands/:href">
           <BrandComponent
           />
+        </Route>
+        <Route path="/brands/:href/models/:model">
+          <ModelComponent />
         </Route>
       </Switch>
     </div>
