@@ -33,3 +33,15 @@ export const braModelsApi = async (brand) => {
     throw error
   }
 }
+
+export const modelDetailsApi = async (brand, model) => {
+  try{
+    const responseDetails = await fetch (
+      `https://api.bratabase.com/brands/${brand}/models/${model}/`
+    );
+    const dataDetail = await responseDetails.json();
+    return dataDetail;
+  } catch(error){
+    throw error
+  }
+}
