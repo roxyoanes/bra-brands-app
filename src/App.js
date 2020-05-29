@@ -18,14 +18,14 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <p>hey</p>
+          <p>Brands List</p>
           {brandsList.map((brand) => (
             <div key={brand.name}>
               <Link to={`/brands/${brand.href.split("/").slice(4, 5)}`}>{brand.name}</Link>
             </div>
           ))}
         </Route>
-        <Route path="/brands/:href">
+        <Route exact path="/brands/:href" >
           <BrandComponent
           />
         </Route>

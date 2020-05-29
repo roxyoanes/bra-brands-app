@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
-import { BrowserRouter as Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { braNameApi, braModelsApi } from "./api";
 
@@ -22,11 +22,6 @@ const BrandComponent = () => {
       setBraModels(dataModels.collection);
     });
   }, [href]);
-
-    const mapped = () => {
-    const arr = braModels.map((obj) => obj.href.split("/").slice(4, 5));
-    console.log("eeee",arr);
-  } 
 
   return (
     <div>
@@ -54,8 +49,8 @@ const BrandComponent = () => {
         )}
         <h4>Bra Models</h4>
         {braModels.map((obj) => (
-          <div key={obj.name}>
-            <Link to={`/brands/brandDescription.body.name/models/${obj.href.split("/").slice(4, 5)}`}>{obj.name}</Link>
+          <div key={obj.bratabase_url}>
+            <Link to={`${href}/models/${(obj.href.split("/").slice(6,7))}`}>{obj.name}</Link>
           </div>
         ))}
       </div>
